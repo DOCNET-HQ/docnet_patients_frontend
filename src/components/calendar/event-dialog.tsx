@@ -35,6 +35,7 @@ import {
   SelectValue
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
+import Link from "next/link";
 
 interface EventDialogProps {
   event: CalendarEvent | null;
@@ -375,6 +376,12 @@ export function EventDialog({ event, isOpen, onClose, onSave, onDelete }: EventD
               onCheckedChange={(checked) => setAllDay(checked === true)}
             />
             <Label htmlFor="all-day">All day</Label>
+          </div>
+
+          <div className="*:not-first:mt-1.5">
+            <Link href="/meet/123" className="text-blue-600 hover:underline">
+              Join Meeting Now
+            </Link>
           </div>
 
           <div className="*:not-first:mt-1.5">

@@ -20,8 +20,6 @@ interface AppointmentData extends BaseTableData {
     id: number
     doctor_photo: string
     doctor_name: string
-    patient_photo: string
-    patient_name: string
     date: string
     time: string
     reason: string
@@ -85,27 +83,6 @@ const appointmentColumns: ColumnDef<AppointmentData>[] = [
                     </AvatarFallback>
                 </Avatar>
                 <div className="font-medium">{row.original.doctor_name}</div>
-            </div>
-        ),
-        enableHiding: false,
-    },
-    {
-        id: "patient",
-        header: "Patient",
-        accessorKey: "patient_name",
-        cell: ({ row }) => (
-            <div className="flex items-center gap-3">
-                <Avatar className="h-9 w-9">
-                    <AvatarImage
-                        src={row.original.patient_photo}
-                        alt={row.original.patient_name}
-                        className="object-cover"
-                    />
-                    <AvatarFallback className="text-sm">
-                        {getInitials(row.original.patient_name)}
-                    </AvatarFallback>
-                </Avatar>
-                <div className="font-medium">{row.original.patient_name}</div>
             </div>
         ),
         enableHiding: false,
@@ -187,8 +164,6 @@ export default function AppointmentsPage() {
             id: 1,
             doctor_photo: "https://i.pravatar.cc/150?img=12",
             doctor_name: "Dr. Sarah Johnson",
-            patient_photo: "https://i.pravatar.cc/150?img=1",
-            patient_name: "John Smith",
             date: "2025-10-15",
             time: "9:00 AM - 9:30 AM",
             reason: "Annual checkup and blood pressure monitoring",
@@ -198,8 +173,6 @@ export default function AppointmentsPage() {
             id: 2,
             doctor_photo: "https://i.pravatar.cc/150?img=13",
             doctor_name: "Dr. Michael Chen",
-            patient_photo: "https://i.pravatar.cc/150?img=5",
-            patient_name: "Emma Johnson",
             date: "2025-10-15",
             time: "10:30 AM - 11:00 AM",
             reason: "Follow-up consultation for migraine treatment",
@@ -209,8 +182,6 @@ export default function AppointmentsPage() {
             id: 3,
             doctor_photo: "https://i.pravatar.cc/150?img=47",
             doctor_name: "Dr. Emily Rodriguez",
-            patient_photo: "https://i.pravatar.cc/150?img=8",
-            patient_name: "Michael Brown",
             date: "2025-10-16",
             time: "2:00 PM - 2:30 PM",
             reason: "Pediatric consultation for child vaccination",
@@ -220,8 +191,6 @@ export default function AppointmentsPage() {
             id: 4,
             doctor_photo: "https://i.pravatar.cc/150?img=33",
             doctor_name: "Dr. James Wilson",
-            patient_photo: "https://i.pravatar.cc/150?img=9",
-            patient_name: "Sophia Davis",
             date: "2025-10-16",
             time: "3:30 PM - 4:00 PM",
             reason: "Orthopedic assessment for knee pain",
@@ -231,8 +200,6 @@ export default function AppointmentsPage() {
             id: 5,
             doctor_photo: "https://i.pravatar.cc/150?img=45",
             doctor_name: "Dr. Aisha Patel",
-            patient_photo: "https://i.pravatar.cc/150?img=11",
-            patient_name: "William Wilson",
             date: "2025-10-17",
             time: "11:00 AM - 11:30 AM",
             reason: "Dermatology consultation for skin condition",
@@ -242,8 +209,6 @@ export default function AppointmentsPage() {
             id: 6,
             doctor_photo: "https://i.pravatar.cc/150?img=52",
             doctor_name: "Dr. Robert Martinez",
-            patient_photo: "https://i.pravatar.cc/150?img=16",
-            patient_name: "Olivia Martinez",
             date: "2025-10-17",
             time: "1:30 PM - 2:00 PM",
             reason: "Oncology follow-up and test results review",
@@ -253,8 +218,6 @@ export default function AppointmentsPage() {
             id: 7,
             doctor_photo: "https://i.pravatar.cc/150?img=48",
             doctor_name: "Dr. Linda Thompson",
-            patient_photo: "https://i.pravatar.cc/150?img=17",
-            patient_name: "James Anderson",
             date: "2025-10-18",
             time: "10:00 AM - 10:30 AM",
             reason: "Mental health counseling session",
@@ -264,8 +227,6 @@ export default function AppointmentsPage() {
             id: 8,
             doctor_photo: "https://i.pravatar.cc/150?img=59",
             doctor_name: "Dr. David Kim",
-            patient_photo: "https://i.pravatar.cc/150?img=20",
-            patient_name: "Isabella Taylor",
             date: "2025-10-18",
             time: "4:00 PM - 4:30 PM",
             reason: "Pre-surgical consultation and evaluation",
@@ -275,8 +236,6 @@ export default function AppointmentsPage() {
             id: 9,
             doctor_photo: "https://i.pravatar.cc/150?img=32",
             doctor_name: "Dr. Maria Garcia",
-            patient_photo: "https://i.pravatar.cc/150?img=27",
-            patient_name: "Benjamin Thomas",
             date: "2025-10-19",
             time: "9:30 AM - 10:00 AM",
             reason: "Prenatal checkup and ultrasound",
@@ -286,8 +245,6 @@ export default function AppointmentsPage() {
             id: 10,
             doctor_photo: "https://i.pravatar.cc/150?img=60",
             doctor_name: "Dr. Thomas Anderson",
-            patient_photo: "https://i.pravatar.cc/150?img=29",
-            patient_name: "Mia Garcia",
             date: "2025-10-19",
             time: "2:30 PM - 3:00 PM",
             reason: "Radiology scan interpretation and consultation",

@@ -70,7 +70,7 @@ export function DashboardSidebar({ profileData, ...props }: DashboardSidebarProp
                 isActive: IsPathActive("/")
             },
             {
-                title: "Doctors",
+                title: "My Doctors",
                 url: "/doctors",
                 icon: UserRoundPlus,
                 isActive: IsPathActive("/doctors")
