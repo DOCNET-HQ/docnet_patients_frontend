@@ -107,9 +107,9 @@ export default function DoctorsPage() {
             {/* Clean Header with Search */}
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                 <div>
-                    <h1 className="text-2xl font-semibold">Medical Team</h1>
+                    <h1 className="text-2xl font-semibold">Medical Professionals</h1>
                     <p className="mt-1">
-                        Connect with your colleagues
+                        Connect with our network of qualified medical professionals.
                     </p>
                 </div>
                 <div className="relative w-full sm:w-80">
@@ -149,22 +149,29 @@ export default function DoctorsPage() {
                 </div>
             ) : (
                 <div className="w-full">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
                         {filteredDoctors.map((doctor) => (
-                            <Card key={doctor.id} className="hover:shadow-md transition-shadow border">
-                                <CardContent className="p-6 pb-4">
+                            <Card key={doctor.id} className="hover:shadow-md transition-shadow border p-0">
+                                <CardContent className="pb-4">
                                     {/* Centered Avatar Section */}
-                                    <div className="flex flex-col items-center text-center mb-4">
-                                        <Avatar className="h-20 w-20 mb-3 border-2 border-gray-100">
+                                    <div className="flex flex-col items-center text-center mb-4 -mx-6">
+                                        {/* <Avatar className="h-20 w-20 mb-3 border-2 border-gray-100">
                                             <AvatarImage
                                                 src={doctor.photo || ""}
                                                 alt={doctor.name}
                                                 className="object-cover"
                                             />
+                                            
                                             <AvatarFallback className="bg-gray-100 font-medium text-black">
                                                 {getInitials(doctor.name)}
                                             </AvatarFallback>
-                                        </Avatar>
+                                        </Avatar> */}
+
+                                        <img
+                                            src={doctor.photo || "https://static.vecteezy.com/system/resources/thumbnails/026/375/249/small/ai-generative-portrait-of-confident-male-doctor-in-white-coat-and-stethoscope-standing-with-arms-crossed-and-looking-at-camera-photo.jpg"}
+                                            alt={doctor.name}
+                                            className="h-70 w-full object-cover rounded-t-md mb-3"
+                                        />
                                         
                                         {/* Name and Specialty */}
                                         <div className="space-y-1">
